@@ -15,20 +15,38 @@ const images = [
 
 const imgList = document.querySelector(".gallery");
 
-const createListImg = images.map((image) => {
-  const itemImg = document.createElement("li");
-  itemImg.classList.add("item");
-
-  const picture = document.createElement("img");
-  picture.src = image.url;
-  picture.alt = image.alt;
-
-  itemImg.appendChild(picture);
-  return itemImg;
-});
+const createListImg = images
+  .map(
+    (image) =>
+      `<li class"item"> 
+        <img
+         src="${image.url}" alt="${image.alt}"> 
+        </img>
+      </li>`
+  )
+  .join("");
 
 console.log(...createListImg);
 
-imgList.append(...createListImg);
+imgList.insertAdjacentHTML("afterbegin", createListImg);
+// const itemImg = document.createElement("li");
+// itemImg.classList.add("item");
+// const picture = document.createElement("img");
+// picture.src = image.url;
+// picture.alt = image.alt;
+// itemImg.append(picture);
+// return itemImg;
 
-// imgList.insertAdjacentHTML("afterbegin", createListImg);
+// const createListImg = images.map((image) => {
+//   const itemImg = document.createElement("li");
+//   itemImg.classList.add("item");
+
+//   const picture = document.createElement("img");
+//   picture.src = image.url;
+//   picture.alt = image.alt;
+
+//   itemImg.append(picture);
+//   return itemImg;
+// });
+
+// imgList.append(...createListImg);
