@@ -6,7 +6,7 @@ console.log(inputLength);
 input.addEventListener("blur", onInputRevise);
 
 function onInputRevise(event) {
-  if (event.currentTarget.value.length < inputLength) {
+  if (event.currentTarget.value.length <= inputLength) {
     console.log(event.currentTarget.value.length);
     input.classList.remove("valid");
     input.classList.add("invalid");
