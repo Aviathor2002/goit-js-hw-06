@@ -13,3 +13,4 @@ function onInputChange(event) {
   }
   output.textContent = event.currentTarget.value;
 }
+
